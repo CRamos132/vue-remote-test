@@ -62,9 +62,11 @@ export default {
   },
   created() {
     const notes = JSON.parse(localStorage.getItem('notes'))
-    const index = notes.findIndex((item) => item.id === this.empresaId)
-    if (notes && notes[index]) {
-      this.initialValue = notes[index].note
+    if (notes) {
+      const index = notes.findIndex((item) => item.id === this.empresaId)
+      if (notes && index !== -1) {
+        this.initialValue = notes[index].note
+      }
     }
   },
   methods: {
