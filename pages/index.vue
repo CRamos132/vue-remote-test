@@ -15,6 +15,7 @@
       <main-display-item
         v-for="(company, index) in empresasFiltradas"
         :key="index"
+        :empresa-id="company.id"
         :empresa="company"
       />
     </main-display-wrapper>

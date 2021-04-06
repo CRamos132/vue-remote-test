@@ -27,6 +27,10 @@
         </p>
         <p>Rua: {{ empresa.address.street }}, {{ empresa.address.suite }}</p>
         <p>{{ empresa.address.city }} - {{ empresa.address.zipcode }}</p>
+        <display-item-comment
+          :initial-value="initialValue"
+          @inputBlur="updateNotes"
+        />
       </section>
     </transition>
   </article>
@@ -34,20 +38,52 @@
 
 <script>
 import ButtonArrow from '../button-arrow/ButtonArrow'
+import DisplayItemComment from '../display-item-comment/DisplayItemComment'
 export default {
   components: {
     'button-arrow': ButtonArrow,
+    'display-item-comment': DisplayItemComment,
   },
   props: {
     empresa: {
       required: true,
       type: Object,
     },
+    empresaId: {
+      required: true,
+      type: Number,
+    },
   },
   data() {
     return {
       isOpen: false,
+      initialValue: '',
     }
+  },
+  created() {
+    const notes = JSON.parse(localStorage.getItem('notes'))
+    const index = notes.findIndex((item) => item.id === this.empresaId)
+    if (notes && notes[index]) {
+      this.initialValue = notes[index].note
+    }
+  },
+  methods: {
+    updateNotes(value) {
+      let notes = JSON.parse(localStorage.getItem('notes'))
+      const newNote = { id: this.empresaId, note: value }
+      if (!notes) {
+        notes = [newNote]
+      } else {
+        const index = notes.findIndex((item) => item.id === this.empresaId)
+        if (index === -1) {
+          notes.push(newNote)
+        } else {
+          notes[index] = newNote
+        }
+      }
+      const stringedNotes = JSON.stringify(notes)
+      localStorage.setItem('notes', stringedNotes)
+    },
   },
 }
 </script>
