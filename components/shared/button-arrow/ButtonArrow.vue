@@ -1,5 +1,5 @@
 <template>
-  <button class="button" @click="emit">
+  <button aria-label="abrir detalhes" class="button" @click="emit">
     <arrow-icon />
   </button>
 </template>
