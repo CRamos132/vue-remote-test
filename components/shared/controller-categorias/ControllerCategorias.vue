@@ -1,8 +1,8 @@
 <template>
   <div v-if="isOpen" class="lista-categorias ativo">
     <div class="lista-controller">
-      <button-base label="Limpar seleção" @click.native="cleanCat" />
-      <button-base label="X" @click.native="isOpen = !isOpen" />
+      <button-base label="Limpar seleção" @acao="cleanCat" />
+      <button-base label="X" @acao="isOpen = !isOpen" />
     </div>
     <div
       v-for="(categoria, index) in categorias"
@@ -20,7 +20,7 @@
     </div>
   </div>
   <div v-else class="lista-categorias">
-    <button-base label="Filtrar" @click.native="isOpen = !isOpen" />
+    <button-base label="Filtrar" @acao="isOpen = !isOpen" />
   </div>
 </template>
 
@@ -92,6 +92,9 @@ export default {
 @media (max-width: 700px) {
   .lista-categorias {
     width: 30vw;
+  }
+  .ativo {
+    width: 40vw;
   }
 }
 </style>

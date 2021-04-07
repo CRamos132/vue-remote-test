@@ -7,7 +7,7 @@
         <h4>Categorias: {{ empresa.company.bs }}</h4>
       </div>
       <div class="button-wrapper">
-        <button-arrow v-rotate-icon @click.native="isOpen = !isOpen" />
+        <button-arrow v-rotate-icon @acao="isOpen = !isOpen" />
       </div>
     </section>
     <transition name="detail-animation">
@@ -121,11 +121,12 @@ export default {
 }
 .detail-animation-enter-active,
 .detail-animation-leave-active {
-  max-height: 200px;
+  max-height: 300px;
   overflow: hidden;
   transition: max-height 0.8s;
 }
-.detail-animation-enter, .detail-animation-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.detail-animation-enter,
+.detail-animation-leave-to {
   max-height: 0px;
   transition: max-height 0.8s;
 }

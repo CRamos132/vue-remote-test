@@ -8,7 +8,7 @@
         placeholder="Filtrar por título"
         @input="filtro = $event.target.value"
       />
-      <controller-categorias :categorias="categorias" @toggle="test" />
+      <controller-categorias :categorias="categorias" @toggle="toggleEvent" />
     </div>
     <main-display-wrapper>
       <loading-spinner v-if="isLoading" />
@@ -87,7 +87,7 @@ export default {
       })
   },
   methods: {
-    test(newCategorias) {
+    toggleEvent(newCategorias) {
       this.categoriasSelecionadas = newCategorias
     },
   },
@@ -110,14 +110,10 @@ export default {
 .filtro {
   width: 70%;
   padding: 4px;
-  /* font-size: 1em; */
 }
 @media (max-width: 700px) {
   .filtro {
     width: 60%;
   }
 }
-/* #5EF2D7 light blue */
-/* #3113F2 purple */
-/* #3D9DF2 acqua */
 </style>

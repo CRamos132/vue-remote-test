@@ -1,5 +1,5 @@
 <template>
-  <button class="button">
+  <button class="button" @click="emit">
     {{ label }}
   </button>
 </template>
@@ -10,6 +10,11 @@ export default {
     label: {
       required: true,
       type: String,
+    },
+  },
+  methods: {
+    emit() {
+      this.$emit('acao')
     },
   },
 }

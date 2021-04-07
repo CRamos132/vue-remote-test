@@ -1,5 +1,5 @@
 <template>
-  <button class="button">
+  <button class="button" @click="emit">
     <arrow-icon />
   </button>
 </template>
@@ -9,6 +9,11 @@ import Arrow from '../../icons/Arrow'
 export default {
   components: {
     'arrow-icon': Arrow,
+  },
+  methods: {
+    emit() {
+      this.$emit('acao')
+    },
   },
 }
 </script>
