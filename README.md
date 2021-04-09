@@ -1,6 +1,6 @@
-# Teste Técnico Desenvolvedor(a) Frontend Júnior [REMOTO]
+# Projeto teste em Vue
 
-Este projeto foi desenvolvido como teste técnico para a empresa [Instruct](https://instruct.com.br/).
+Projeto teste de Vue, está deployado (aqui)[https://vue-vough.herokuapp.com/]
 
 ### Tecnologias utilizadas
 
