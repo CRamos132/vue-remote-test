@@ -1,6 +1,6 @@
 # Projeto teste em Vue
 
-Projeto teste de Vue, está deployado (aqui)[https://vue-vough.herokuapp.com/]
+Projeto teste de Vue, está deployado [aqui](https://vue-vough.herokuapp.com/)
 
 ### Tecnologias utilizadas
 
