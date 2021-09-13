@@ -20,7 +20,3 @@ Após clonar o repositório usar este comando para instalar todas as dependênci
 
 Abre o projeto localmente
 
-### Contatos
-
-- [LinkedIn](https://www.linkedin.com/in/heitor-gon%C3%A7alves-de-paula-ramos-316abb194/)
-- [Email](mailto:heitorgpramos95@gmail.com)
